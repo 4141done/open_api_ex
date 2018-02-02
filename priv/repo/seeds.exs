@@ -9,3 +9,9 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+alias OpenApiFun.Professionals.Lawyer
+alias OpenApiFun.Repo
+
+%Lawyer{}
+|> Lawyer.changeset(%{name: "Steve"})
+|> Repo.insert!

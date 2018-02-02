@@ -41,6 +41,7 @@ defmodule OpenApiFun.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
+      {:open_api_spex, "~> 1.1"},
       {:mix_test_watch, "~> 0.5", only: :dev, runtime: false}
     ]
   end

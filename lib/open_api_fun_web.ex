@@ -23,6 +23,7 @@ defmodule OpenApiFunWeb do
       import Plug.Conn
       import OpenApiFunWeb.Router.Helpers
       import OpenApiFunWeb.Gettext
+      import Phoenix.Controller
     end
   end
 

@@ -22,6 +22,6 @@ defmodule OpenApiFunWeb.Router do
   scope "/api", OpenApiFunWeb do
     pipe_through :api
 
-    resources "/lawyers", LawyerController, except: [:new, :edit]
+    resources "/lawyers", LawyerController, only: [:show]
   end
 end

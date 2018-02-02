@@ -1,0 +1,95 @@
+{
+  "servers": [
+    {
+      "variables": {},
+      "url": "http://localhost:80/"
+    }
+  ],
+  "paths": {
+    "/api/lawyers/{id}": {
+      "get": {
+        "tags": [
+          "lawyers"
+        ],
+        "summary": "Show Lawyer",
+        "responses": {
+          "200": {
+            "description": "Lawyer",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LawyerResponse"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "name": "id",
+            "in": "path",
+            "example": 123,
+            "description": "Lawyer ID"
+          }
+        ],
+        "operationId": "LawyerController.show",
+        "description": "Show a lawyer by id"
+      }
+    }
+  },
+  "openapi": "3.0.0",
+  "info": {
+    "version": "0.0.1",
+    "title": "Open Api fun"
+  },
+  "components": {
+    "schemas": {
+      "LawyerResponse": {
+        "x-struct": "Elixir.OpenApiFun.Schemas.LawyerResponse",
+        "type": "object",
+        "title": "LawyerResponse",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Lawyer"
+          }
+        },
+        "description": "Response schema for single lawyer"
+      },
+      "Lawyer": {
+        "type": "object",
+        "title": "Lawyer",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "updated_at": {
+            "type": "string",
+            "format": "datetime",
+            "description": "Update timestamp"
+          },
+          "name": {
+            "type": "string",
+            "description": "The Lawyer's full name"
+          },
+          "inserted_at": {
+            "type": "string",
+            "format": "datetime",
+            "description": "Creation timestamp"
+          },
+          "id": {
+            "type": "integer",
+            "description": "Lawyer ID"
+          }
+        },
+        "example": {
+          "id": 123
+        },
+        "description": "A lawyer in the Avvo system"
+      }
+    }
+  }
+}
